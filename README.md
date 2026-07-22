@@ -1,120 +1,225 @@
-# 📊 CSV Data Explorer
+<div align="center">
 
-A Flask web app that turns any uploaded CSV into an instant data report — summary statistics, missing value detection, correlation heatmaps, and distribution charts — without writing a single line of analysis code yourself.
+<img src="https://user-images.githubusercontent.com/74038190/216656977-ef584e23-480a-4d1f-8c3f-0f8d2b5b5f6b.gif" width="100%">
 
-Built as **Week 3** of my Python → Flask → AI/ML project roadmap.
+# CSV Data Explorer
 
----
+### Turn Any CSV Into an Interactive Data Report
 
-## 🚀 Live Demo
+<p>
+A modern Flask web application that instantly transforms uploaded CSV files into detailed analytical reports featuring descriptive statistics, missing value analysis, smart insights, correlation heatmaps, distribution charts, outlier detection, and interactive visualizations — all without writing a single line of analysis code.
+</p>
 
-🔗 [Live App](#) *(add link after deploying)*
+<p>
+Built as <strong>Week 3</strong> of my <strong>Python → Flask → AI/ML</strong> roadmap.
+</p>
 
----
+<img src="https://user-images.githubusercontent.com/74038190/216656965-39a36c9d-8db8-4a7e-9b8b-d59c79e5b8d3.gif" width="450">
 
-## ✨ Features
-
-- 📁 **Drag & Drop CSV Upload** — with a polished custom UI
-- 📈 **Automatic Summary Statistics** — row/column counts, data types, unique value counts
-- ⚠️ **Missing Value Report** — visual breakdown of which columns have missing data and how much
-- 🔥 **Correlation Heatmap** — auto-generated with Seaborn, showing relationships between numeric columns
-- 📊 **Smart Distribution Charts** — automatically skips constant/ID-like columns and uses log scale for heavily skewed data (like income), so charts stay meaningful even on messy real-world datasets
-- 🧾 **Data Preview Table** — first 10 rows rendered directly from the uploaded file
-- 🤖 **Smart Insights** — automated plain-English observations about the dataset (strongest correlation, most missing data, skewed columns, duplicate rows) generated through statistical reasoning, not hardcoded text
-- 🎯 **Outlier Detection** — automatically flags unusual values in each numeric column using the IQR (Interquartile Range) method
-- 🗑️ **Zero Storage Footprint** — charts are generated in-memory and embedded directly as images; uploaded files are deleted immediately after processing, so nothing accumulates on the server
+</div>
 
 ---
 
-## 🛠️ Tech Stack
+<div align="center">
 
-| Layer | Technology |
-|---|---|
-| Backend | Python, Flask |
-| Data Analysis | Pandas |
-| Visualization | Matplotlib, Seaborn |
-| Frontend | HTML5, CSS3, Vanilla JavaScript |
-| Templating | Jinja2 |
+## Project Status
 
----
+<img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white">
+<img src="https://img.shields.io/badge/Flask-Web%20Application-000000?style=for-the-badge&logo=flask">
+<img src="https://img.shields.io/badge/Pandas-Data%20Analysis-150458?style=for-the-badge&logo=pandas">
+<img src="https://img.shields.io/badge/Matplotlib-Visualization-11557C?style=for-the-badge">
+<img src="https://img.shields.io/badge/Seaborn-Statistical%20Plots-4C72B0?style=for-the-badge">
+<img src="https://img.shields.io/badge/HTML5-CSS3-JavaScript?style=for-the-badge&logo=html5">
+<img src="https://img.shields.io/badge/License-MIT-success?style=for-the-badge">
 
-## ⚙️ How It Works
-
-1. A user uploads a CSV via drag-and-drop or file browser.
-2. Flask reads it into a Pandas DataFrame and immediately deletes the temporary uploaded file — nothing is kept on disk.
-3. The app analyzes the DataFrame: row/column counts, data types, missing values, duplicate rows, and numeric summary statistics.
-4. For visualizations, the app filters out columns that aren't meaningful to plot (completely constant values, or ID-like columns with too many unique values), then prioritizes columns with the most variance.
-5. Charts are rendered with Matplotlib/Seaborn directly into an in-memory buffer, base64-encoded, and embedded straight into the HTML — no image files are ever saved to disk.
-6. A rule-based insight engine scans the statistical summary and generates plain-English observations — e.g. flagging the most correlated column pair, the column with the most missing data, or heavily skewed distributions.
-7. Each numeric column is scanned for outliers using the IQR method (values falling outside 1.5× the interquartile range), and flagged columns are shown in a dedicated table.
-8. The full report — stats, insights, missing values, outliers, charts, and a data preview — is rendered on one page.
+</div>
 
 ---
 
-## 📂 Project Structure
+<div align="center">
 
-```
-csv-data-explorer/
-├── app.py                  # Flask routes, Pandas analysis, chart generation
-├── requirements.txt
-├── .env
-├── .gitignore
-├── uploads/                 # temporary storage, files deleted immediately after reading
-├── static/
-│   ├── css/style.css
-│   └── js/script.js         # drag-and-drop UX
-└── templates/
-    ├── base.html
-    ├── upload.html
-    └── report.html
-```
+## Live Demo
+
+<a href="#">
+<img src="https://img.shields.io/badge/Live%20Application-Coming%20Soon-0A66C2?style=for-the-badge">
+</a>
+
+Deploy on Render, Railway or PythonAnywhere and replace the placeholder link.
+
+</div>
 
 ---
 
-## 💻 Running Locally
+<div align="center">
 
-### 1. Clone and set up
-```bash
-git clone https://github.com/CodexxNinja/csv-data-explorer.git
-cd csv-data-explorer
-python -m venv venv
-venv\Scripts\activate      # Windows
-source venv/bin/activate   # Mac/Linux
-pip install -r requirements.txt
-```
+## Project Overview
 
-### 2. Add environment variables
-Create a `.env` file:
-```
-SECRET_KEY=your_generated_secret_key
-```
+</div>
 
-### 3. Run
-```bash
-python app.py
-```
-Visit `http://127.0.0.1:5000`, upload any CSV file, and view the generated report.
+CSV Data Explorer is designed to eliminate the repetitive work involved in exploring datasets. Instead of manually inspecting data, writing analysis scripts, and generating plots, users simply upload a CSV file and receive a comprehensive report within seconds.
+
+The application automatically profiles the dataset, computes descriptive statistics, detects missing values and duplicate records, identifies outliers, generates meaningful visualizations, and produces plain-English insights based entirely on statistical analysis.
+
+Unlike many simple CSV viewers, this project intelligently skips columns that don't provide meaningful visualizations, detects heavily skewed data, applies logarithmic scaling where appropriate, and generates charts completely in memory without storing files on the server.
 
 ---
 
-## 🧠 What I Learned Building This
+<div align="center">
 
-- Using Pandas to profile a dataset automatically: dtypes, missing values, duplicates, and descriptive statistics
-- Generating Matplotlib/Seaborn charts on a server with no display (`Agg` backend) and converting them to base64 images instead of saving files — a stateless approach that works on any hosting platform without leaving files behind
-- Writing chart-selection logic that adapts to the actual dataset instead of blindly plotting the first few columns — skipping constant/ID-like columns and using log scale for skewed data
-- Building a rule-based insight engine that turns raw statistics (correlation, skewness, missing data) into readable, human-friendly observations
-- Implementing outlier detection using the IQR statistical method
-- Debugging a subtle HTML/browser quirk where a `hidden` + `required` file input silently blocks form submission
-- Handling file uploads safely in Flask, including size limits and cleanup
+<img src="https://user-images.githubusercontent.com/74038190/212744275-c56d4d31-f9b3-4b8d-a67b-fb70b2f9d8d3.gif" width="70">
+
+# Features
+
+</div>
+
+<table>
+<tr>
+<td width="50%">
+
+### Smart CSV Upload
+
+Upload datasets through an elegant drag-and-drop interface or browse directly from your system.
+
+</td>
+
+<td width="50%">
+
+### Automatic Dataset Profiling
+
+Instantly generates row counts, column counts, data types, unique values, and descriptive statistics.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+### Missing Value Analysis
+
+Highlights incomplete data with percentage calculations and visual summaries.
+
+</td>
+
+<td>
+
+### Correlation Heatmaps
+
+Automatically creates correlation matrices for numeric columns using Seaborn.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+### Intelligent Distribution Charts
+
+Skips constant and ID-like columns while selecting the most meaningful features for visualization.
+
+</td>
+
+<td>
+
+### Smart Scaling
+
+Automatically applies logarithmic scaling to highly skewed numerical distributions.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+### Interactive Data Preview
+
+Displays the first rows of the uploaded dataset for quick inspection.
+
+</td>
+
+<td>
+
+### Rule-Based Insights
+
+Produces human-readable observations about correlations, missing data, duplicates, skewness, and overall dataset quality.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+### Outlier Detection
+
+Detects unusual observations using the Interquartile Range (IQR) statistical method.
+
+</td>
+
+<td>
+
+### Zero Storage Design
+
+Uploaded files are removed immediately after processing while charts are generated entirely in memory.
+
+</td>
+</tr>
+</table>
 
 ---
 
-## 🗺️ What's Next
+<div align="center">
 
-Week 4 moves into Numpy — building an image processing tool using raw array manipulation.
+## Why This Project?
+
+</div>
+
+Traditional CSV viewers only display raw tables. This application goes several steps further by automatically understanding the uploaded dataset and presenting meaningful statistical information that helps users begin exploratory data analysis immediately.
+
+Whether the uploaded file contains customer information, sales records, survey responses, financial transactions, or machine learning datasets, the application adapts its analysis automatically and generates relevant visual reports without requiring any programming knowledge.
 
 ---
 
-## 📄 License
+<div align="center">
 
-This project is open source and available for anyone to learn from.
+<img src="https://user-images.githubusercontent.com/74038190/212744286-4d65b0d0-3a70-4c3f-8f6b-0b2d7b8b6b64.gif" width="550">
+
+## Preview
+
+<table>
+<tr>
+<td align="center">
+
+Upload CSV
+
+</td>
+
+<td align="center">
+
+Automatic Analysis
+
+</td>
+
+<td align="center">
+
+Visual Report
+
+</td>
+
+<td align="center">
+
+Smart Insights
+
+</td>
+</tr>
+</table>
+
+<i>Add screenshots after deployment.</i>
+
+</div>
+
+---
+
+<div align="center">
+
+<img src="https://user-images.githubusercontent.com/74038190/212744289-38d25f79-2b2f-4a70-a2f5-c87dfc3e59d1.gif" width="100%">
+
+</div>
