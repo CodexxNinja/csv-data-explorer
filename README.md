@@ -1,167 +1,103 @@
-# CSV Data Explorer
+# <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Magnifying%20Glass%20Tilted%20Left.png" alt="Magnifying Glass" width="40" height="40" /> CSV Data Explorer
 
-<img src="https://user-images.githubusercontent.com/74038190/212750342-3d7c7b2d-f0a8-43b7-b2c9-6d3b0b6d4d63.gif" width="700"/>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/74038190/212750342-3d7c7b2d-f0a8-43b7-b2c9-6d3b0b6d4d63.gif" width="700" alt="CSV Data Explorer Demo"/>
+</p>
 
-### Intelligent CSV Analysis using Flask, Pandas & Data Visualization
+<p align="center">
+  <strong>Intelligent CSV Analysis using Flask, Pandas & Data Visualization</strong>
+</p>
 
-Automatically transform any uploaded CSV into a complete analytical
-report with statistics, visualizations, smart insights, and outlier
-detection.
+<p align="center">
+  Automatically transform any uploaded CSV file into a comprehensive analytical report featuring descriptive statistics, automated distribution charts, correlation heatmaps, rule-based insights, and IQR outlier detection.
+</p>
 
-<br>
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask" alt="Flask"/>
+  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas" alt="Pandas"/>
+  <img src="https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge" alt="Matplotlib"/>
+  <img src="https://img.shields.io/badge/Seaborn-4C72B0?style=for-the-badge" alt="Seaborn"/>
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"/>
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"/>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/>
+</p>
 
-<img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
-<img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask"/>
-<img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas"/>
-<img src="https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/Seaborn-4C72B0?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
-<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
+---
 
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bookmarks.png" alt="Overview" width="28" height="28" /> Overview
 
-------------------------------------------------------------------------
+**CSV Data Explorer** is an automated web-based analytical tool designed to bridge the gap between raw data collection and preliminary analysis. By uploading a standard CSV dataset, users receive a fully formatted, interactive HTML dashboard detailing distribution trends, data cleanliness, variable relationships, and anomaly occurrences—all without writing code.
 
-## Overview
+> Developed during **Week 3** of the **Python → Flask → AI/ML Engineering Roadmap**.
 
-CSV Data Explorer is a Flask web application that converts any uploaded
-CSV file into an interactive analytical report. It automatically
-performs dataset profiling, missing value analysis, correlation
-analysis, distribution visualization, outlier detection, and generates
-readable statistical insights.
+---
 
-Built as **Week 3** of my **Python → Flask → AI/ML Roadmap**.
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Laptop.png" alt="Demo" width="28" height="28" /> Live Demo
 
-------------------------------------------------------------------------
+> **Hosted Application:** *Link to be added post-deployment.*
 
-## Live Demo
+---
 
-> Add deployment URL after hosting.
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Sparkles.png" alt="Key Features" width="28" height="28" /> Key Features
 
-------------------------------------------------------------------------
+| Feature | Description |
+| :--- | :--- |
+| **Drag & Drop Upload** | Modern client-side UI with real-time file validation and drop-zone visual feedback. |
+| **Dataset Profiling** | Instant summaries covering total rows, dimensions, inferenced data types, and unique counts. |
+| **Missing Data Audit** | Column-level integrity reporting to identify incomplete records and missingness ratios. |
+| **Correlation Analysis** | Automatic generation of interactive/static Pearson correlation heatmaps for numeric features. |
+| **Visual Distributions** | Tailored chart rendering (histograms, kernel density estimates, box plots) per column type. |
+| **Outlier Detection** | Interquartile Range (IQR) implementation to flag extreme values across dataset variables. |
+| **Automated Insights** | Rule-based engine rendering clear textual observations regarding data distribution and quality. |
+| **Interactive Preview** | Paginated table display presenting the initial records of the uploaded file. |
+| **Privacy & Cleanup** | Automatic server-side file purge upon report generation for secure processing. |
 
-## Features
+---
 
-  Feature                Description
-  ---------------------- ---------------------------------------------
-  Drag & Drop Upload     Modern CSV upload interface
-  Summary Statistics     Rows, columns, datatypes, unique values
-  Missing Value Report   Column-wise missing data analysis
-  Correlation Heatmap    Automatic numeric correlation visualization
-  Distribution Charts    Intelligent chart generation
-  Smart Insights         Rule-based statistical observations
-  Outlier Detection      IQR-based anomaly detection
-  Data Preview           First 10 rows displayed
-  Secure Processing      Uploaded files removed immediately
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Tech/Gear.png" alt="Tech Stack" width="28" height="28" /> Tech Stack Architecture
 
-------------------------------------------------------------------------
+* **Backend Engine:** Python 3.10+, Flask
+* **Data Processing:** Pandas, NumPy
+* **Visualization:** Matplotlib, Seaborn
+* **Frontend Design:** HTML5, CSS3, JavaScript (ES6)
+* **Templating:** Jinja2
 
-## Tech Stack
+---
 
-  Layer             Technology
-  ----------------- -------------------------
-  Backend           Python, Flask
-  Data Processing   Pandas
-  Visualization     Matplotlib, Seaborn
-  Frontend          HTML5, CSS3, JavaScript
-  Templates         Jinja2
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Diagrams/Flowchart.png" alt="Workflow" width="28" height="28" /> Application Workflow
 
-------------------------------------------------------------------------
-
-## Application Workflow
-
-``` text
-CSV Upload
-    │
-    ▼
-Flask Backend
-    │
-    ▼
-Pandas Data Analysis
-    ├── Summary Statistics
-    ├── Missing Values
-    ├── Duplicate Detection
-    ├── Correlation Matrix
-    ├── Distribution Charts
-    ├── Outlier Detection
-    └── Smart Insights
-    │
-    ▼
-Interactive HTML Report
-```
-
-------------------------------------------------------------------------
-
-## Project Structure
-
-``` text
-csv-data-explorer/
-├── app.py
-├── requirements.txt
-├── .env
-├── .gitignore
-├── uploads/
-├── static/
-│   ├── css/
-│   └── js/
-└── templates/
-    ├── base.html
-    ├── upload.html
-    └── report.html
-```
-
-------------------------------------------------------------------------
-
-## Local Setup
-
-``` bash
-git clone https://github.com/CodexxNinja/csv-data-explorer.git
-cd csv-data-explorer
-
-python -m venv venv
-
-# Windows
-venv\Scripts\activate
-
-# Linux / macOS
-source venv/bin/activate
-
-pip install -r requirements.txt
-```
-
-Create `.env`
-
-``` env
-SECRET_KEY=your_generated_secret_key
-```
-
-Run
-
-``` bash
-python app.py
-```
-
-Open:
-
-    http://127.0.0.1:5000
-
-------------------------------------------------------------------------
-
-## What the Application Analyzes
-
--   Dataset dimensions
--   Column data types
--   Missing values
--   Duplicate rows
--   Summary statistics
--   Correlation matrix
--   Distribution plots
--   Outlier detection using IQR
--   Smart statistical observations
--   Data preview
-
-------------------------------------------------------------------------
-
-## License
-
-This project is open source and available for learning purposes.
+```text
+               +-----------------------+
+               |   CSV File Uploaded   |
+               +-----------+-----------+
+                           |
+                           v
+               +-----------------------+
+               |   Flask Route Engine  |
+               +-----------+-----------+
+                           |
+                           v
+         +-----------------------------------+
+         |     Pandas Processing Engine      |
+         +-----------------+-----------------+
+                           |
+   +-----------------------+-----------------------+
+   |                       |                       |
+   v                       v                       v
+[ Profiling ]       [ Visualizations ]      [ IQR Outliers ]
+* Shape & Dtypes    * Histograms            * Bounds Calculation
+* Null Auditing     * Heatmaps              * Anomaly Flagging
+* Unique Values     * Box Plots             * Rule-Based Insights
+   |                       |                       |
+   +-----------------------+-----------------------+
+                           |
+                           v
+               +-----------------------+
+               |   Jinja2 Rendering    |
+               +-----------+-----------+
+                           |
+                           v
+               +-----------------------+
+               | HTML Interactive Dashboard |
+               +-----------------------+
