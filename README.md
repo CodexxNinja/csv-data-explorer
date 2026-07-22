@@ -505,24 +505,6 @@ Upload any CSV dataset and the application will immediately generate a complete 
 * Responsive Flask interface
 
 ---
-<div align="center">
-
-# Future Improvements
-
-</div>
-
-* Support Excel (.xlsx) datasets
-* Download reports as PDF
-* Interactive Plotly visualizations
-* Data cleaning recommendations
-* Automatic feature engineering suggestions
-* Machine Learning readiness score
-* AI-generated dataset explanations
-* Dashboard comparison between multiple datasets
-* Export processed datasets
-* Dark mode interface
-
----
 
 <div align="center">
 
