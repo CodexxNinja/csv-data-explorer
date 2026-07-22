@@ -10,10 +10,6 @@
 A modern Flask web application that instantly transforms uploaded CSV files into detailed analytical reports featuring descriptive statistics, missing value analysis, smart insights, correlation heatmaps, distribution charts, outlier detection, and interactive visualizations — all without writing a single line of analysis code.
 </p>
 
-<p>
-Built as <strong>Week 3</strong> of my <strong>Python → Flask → AI/ML</strong> roadmap.
-</p>
-
 <img src="https://user-images.githubusercontent.com/74038190/216656965-39a36c9d-8db8-4a7e-9b8b-d59c79e5b8d3.gif" width="450">
 
 </div>
@@ -43,9 +39,7 @@ Built as <strong>Week 3</strong> of my <strong>Python → Flask → AI/ML</stron
 <a href="#">
 <img src="https://img.shields.io/badge/Live%20Application-Coming%20Soon-0A66C2?style=for-the-badge">
 </a>
-
-Deploy on Render, Railway or PythonAnywhere and replace the placeholder link.
-
+https://csv-data-explorer-8dkj.onrender.com
 </div>
 
 ---
@@ -176,48 +170,6 @@ Traditional CSV viewers only display raw tables. This application goes several s
 
 Whether the uploaded file contains customer information, sales records, survey responses, financial transactions, or machine learning datasets, the application adapts its analysis automatically and generates relevant visual reports without requiring any programming knowledge.
 
----
-
-<div align="center">
-
-<img src="https://user-images.githubusercontent.com/74038190/212744286-4d65b0d0-3a70-4c3f-8f6b-0b2d7b8b6b64.gif" width="550">
-
-## Preview
-
-<table>
-<tr>
-<td align="center">
-
-Upload CSV
-
-</td>
-
-<td align="center">
-
-Automatic Analysis
-
-</td>
-
-<td align="center">
-
-Visual Report
-
-</td>
-
-<td align="center">
-
-Smart Insights
-
-</td>
-</tr>
-</table>
-
-<i>Add screenshots after deployment.</i>
-
-</div>
-
----
-
 <div align="center">
 
 <img src="https://user-images.githubusercontent.com/74038190/212744289-38d25f79-2b2f-4a70-a2f5-c87dfc3e59d1.gif" width="100%">
@@ -281,7 +233,7 @@ Smart Insights
 </td>
 
 <td align="center">
-<img src="https://cdn.simpleicons.org/jinja/black" width="65"><br>
+<img src="https://cdn.simpleicons.org/jinja/B41717" width="65"><br>
 <b>Jinja2</b>
 </td>
 
@@ -557,53 +509,6 @@ Upload any CSV dataset and the application will immediately generate a complete 
 * Responsive Flask interface
 
 ---
-
-<div align="center">
-
-# What I Learned
-
-</div>
-
-Building this project helped me strengthen my understanding of both Flask development and exploratory data analysis.
-
-### Flask
-
-* File uploads and request handling
-* Secure file processing
-* Template rendering using Jinja2
-* Environment variable management
-* Stateless server-side chart generation
-
-### Data Analysis
-
-* Data profiling using Pandas
-* Missing value analysis
-* Duplicate detection
-* Correlation analysis
-* Descriptive statistics
-* Outlier detection using IQR
-* Feature selection for visualization
-* Skewness detection
-* Rule-based analytical reasoning
-
-### Visualization
-
-* Matplotlib figure generation
-* Seaborn heatmaps
-* Histogram creation
-* Base64 image encoding
-* In-memory plotting using the Agg backend
-
-### Problem Solving
-
-* Hidden required input validation issue
-* Dynamic chart selection
-* Automatic logarithmic scaling
-* Temporary file cleanup
-* Building reusable analysis functions
-
----
-
 <div align="center">
 
 # Future Improvements
