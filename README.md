@@ -223,3 +223,267 @@ Smart Insights
 <img src="https://user-images.githubusercontent.com/74038190/212744289-38d25f79-2b2f-4a70-a2f5-c87dfc3e59d1.gif" width="100%">
 
 </div>
+<div align="center">
+
+<img src="https://user-images.githubusercontent.com/74038190/212744275-c56d4d31-f9b3-4b8d-a67b-fb70b2f9d8d3.gif" width="70">
+
+# Tech Stack
+
+</div>
+
+<div align="center">
+
+<table>
+<tr>
+
+<td align="center" width="20%">
+<img src="https://skillicons.dev/icons?i=python" width="65"><br>
+<b>Python</b>
+</td>
+
+<td align="center" width="20%">
+<img src="https://skillicons.dev/icons?i=flask" width="65"><br>
+<b>Flask</b>
+</td>
+
+<td align="center" width="20%">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" width="65"><br>
+<b>Pandas</b>
+</td>
+
+<td align="center" width="20%">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg" width="65"><br>
+<b>Matplotlib</b>
+</td>
+
+<td align="center" width="20%">
+<img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" width="65"><br>
+<b>Seaborn</b>
+</td>
+
+</tr>
+
+<tr>
+
+<td align="center">
+<img src="https://skillicons.dev/icons?i=html" width="65"><br>
+<b>HTML5</b>
+</td>
+
+<td align="center">
+<img src="https://skillicons.dev/icons?i=css" width="65"><br>
+<b>CSS3</b>
+</td>
+
+<td align="center">
+<img src="https://skillicons.dev/icons?i=javascript" width="65"><br>
+<b>JavaScript</b>
+</td>
+
+<td align="center">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jinja/jinja-original.svg" width="65"><br>
+<b>Jinja2</b>
+</td>
+
+<td align="center">
+<img src="https://skillicons.dev/icons?i=git" width="65"><br>
+<b>Git</b>
+</td>
+
+</tr>
+</table>
+
+</div>
+
+---
+
+<div align="center">
+
+# Application Workflow
+
+<img src="https://user-images.githubusercontent.com/74038190/212749726-d36b8253-74bb-450d-abbf-7d7cb8f4c8d5.gif" width="500">
+
+</div>
+
+```text
+                Upload CSV
+                     │
+                     ▼
+          Flask Receives File
+                     │
+                     ▼
+        Load into Pandas DataFrame
+                     │
+                     ▼
+      Dataset Profiling & Validation
+                     │
+     ┌───────────────┼────────────────┐
+     ▼               ▼                ▼
+ Summary Stats   Missing Values   Duplicates
+     │               │                │
+     └───────────────┼────────────────┘
+                     ▼
+       Correlation Analysis
+                     │
+                     ▼
+      Distribution Visualization
+                     │
+                     ▼
+        Outlier Detection (IQR)
+                     │
+                     ▼
+       Rule-Based Smart Insights
+                     │
+                     ▼
+       Interactive HTML Report
+```
+
+---
+
+<div align="center">
+
+# Project Architecture
+
+</div>
+
+```text
+                    Browser
+                       │
+                       │
+              Upload CSV Dataset
+                       │
+                       ▼
+               Flask Application
+                       │
+         ┌─────────────┼─────────────┐
+         ▼             ▼             ▼
+     Pandas      Matplotlib      Seaborn
+         │             │             │
+         └─────────────┼─────────────┘
+                       ▼
+            Statistical Processing
+                       │
+          Summary • Charts • Insights
+                       │
+                       ▼
+              Jinja2 HTML Templates
+                       │
+                       ▼
+             Interactive Final Report
+```
+
+---
+
+<div align="center">
+
+# Project Structure
+
+</div>
+
+```text
+csv-data-explorer/
+│
+├── app.py
+├── requirements.txt
+├── .env
+├── .gitignore
+│
+├── uploads/
+│
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   │
+│   └── js/
+│       └── script.js
+│
+├── templates/
+│   ├── base.html
+│   ├── upload.html
+│   └── report.html
+│
+└── README.md
+```
+
+---
+
+<div align="center">
+
+# Installation
+
+<img src="https://user-images.githubusercontent.com/74038190/212744286-4d65b0d0-3a70-4c3f-8f6b-0b2d7b8b6b64.gif" width="500">
+
+</div>
+
+### Clone Repository
+
+```bash
+git clone https://github.com/CodexxNinja/csv-data-explorer.git
+
+cd csv-data-explorer
+```
+
+---
+
+### Create Virtual Environment
+
+**Windows**
+
+```bash
+python -m venv venv
+
+venv\Scripts\activate
+```
+
+**Linux / macOS**
+
+```bash
+python3 -m venv venv
+
+source venv/bin/activate
+```
+
+---
+
+### Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### Environment Variables
+
+Create a `.env` file in the project root.
+
+```env
+SECRET_KEY=your_generated_secret_key
+```
+
+---
+
+### Run Application
+
+```bash
+python app.py
+```
+
+---
+
+### Open Browser
+
+```
+http://127.0.0.1:5000
+```
+
+Upload any CSV dataset and the application will immediately generate a complete analytical report with statistics, charts, outlier detection, and intelligent insights.
+
+---
+
+<div align="center">
+
+<img src="https://user-images.githubusercontent.com/74038190/212744289-38d25f79-2b2f-4a70-a2f5-c87dfc3e59d1.gif" width="100%">
+
+</div>
+:::writing{}
