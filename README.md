@@ -36,10 +36,7 @@ A modern Flask web application that instantly transforms uploaded CSV files into
 
 ## Live Demo
 
-<a href="https://csv-data-explorer-8dkj.onrender.com">
-<img src="https://img.shields.io/badge/Live%20Application-Coming%20Soon-0A66C2?style=for-the-badge">
-</a>
-</div>
+[![Live App](https://img.shields.io/badge/Live_Demo-Online-brightgreen?style=for-the-badge)](https://csv-data-explorer-8dkj.onrender.com)
 
 ---
 
