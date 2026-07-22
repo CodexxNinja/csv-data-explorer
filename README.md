@@ -281,7 +281,7 @@ Smart Insights
 </td>
 
 <td align="center">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jinja/jinja-original.svg" width="65"><br>
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Jinja2_Logo.svg" width="65"><br>
 <b>Jinja2</b>
 </td>
 
@@ -486,4 +486,207 @@ Upload any CSV dataset and the application will immediately generate a complete 
 <img src="https://user-images.githubusercontent.com/74038190/212744289-38d25f79-2b2f-4a70-a2f5-c87dfc3e59d1.gif" width="100%">
 
 </div>
-:::writing{}
+<div align="center">
+
+<img src="https://user-images.githubusercontent.com/74038190/212749695-042d7f9c-8c7d-4d17-9f45-f9dbb6f7a6f5.gif" width="70">
+
+# How It Works
+
+</div>
+
+1. The user uploads a CSV file using the drag-and-drop interface or file picker.
+
+2. Flask receives the uploaded file and securely loads it into a Pandas DataFrame.
+
+3. The temporary uploaded file is immediately deleted after reading, ensuring no unnecessary data remains on the server.
+
+4. The application profiles the dataset by calculating:
+
+   * Number of rows and columns
+   * Data types
+   * Missing values
+   * Duplicate rows
+   * Descriptive statistics
+   * Unique value counts
+
+5. Numeric columns are analyzed to generate a correlation matrix and a Seaborn heatmap.
+
+6. The visualization engine automatically ignores:
+
+   * Constant columns
+   * Identifier-like columns
+   * Features that provide little analytical value
+
+7. Distribution plots are generated for the most informative columns. Highly skewed features automatically use logarithmic scaling for better visualization.
+
+8. Every numeric column is scanned for statistical outliers using the Interquartile Range (IQR) method.
+
+9. A rule-based insight engine converts statistical findings into plain-English observations, highlighting:
+
+   * Strongest correlations
+   * Columns with the most missing values
+   * Duplicate records
+   * Skewed distributions
+   * Potential data quality issues
+
+10. Charts are rendered entirely in memory, encoded as Base64 images, and embedded directly into the report without creating image files.
+
+11. The complete analytical report is displayed in a single interactive webpage.
+
+---
+
+<div align="center">
+
+<img src="https://user-images.githubusercontent.com/74038190/212744286-4d65b0d0-3a70-4c3f-8f6b-0b2d7b8b6b64.gif" width="70">
+
+# Key Highlights
+
+</div>
+
+* Automatic dataset profiling
+* Statistical summaries
+* Missing value analysis
+* Duplicate record detection
+* Correlation heatmaps
+* Intelligent distribution plots
+* Rule-based analytical insights
+* IQR-based outlier detection
+* Interactive data preview
+* Secure temporary file handling
+* In-memory chart generation
+* Responsive Flask interface
+
+---
+
+<div align="center">
+
+# What I Learned
+
+</div>
+
+Building this project helped me strengthen my understanding of both Flask development and exploratory data analysis.
+
+### Flask
+
+* File uploads and request handling
+* Secure file processing
+* Template rendering using Jinja2
+* Environment variable management
+* Stateless server-side chart generation
+
+### Data Analysis
+
+* Data profiling using Pandas
+* Missing value analysis
+* Duplicate detection
+* Correlation analysis
+* Descriptive statistics
+* Outlier detection using IQR
+* Feature selection for visualization
+* Skewness detection
+* Rule-based analytical reasoning
+
+### Visualization
+
+* Matplotlib figure generation
+* Seaborn heatmaps
+* Histogram creation
+* Base64 image encoding
+* In-memory plotting using the Agg backend
+
+### Problem Solving
+
+* Hidden required input validation issue
+* Dynamic chart selection
+* Automatic logarithmic scaling
+* Temporary file cleanup
+* Building reusable analysis functions
+
+---
+
+<div align="center">
+
+# Future Improvements
+
+</div>
+
+* Support Excel (.xlsx) datasets
+* Download reports as PDF
+* Interactive Plotly visualizations
+* Data cleaning recommendations
+* Automatic feature engineering suggestions
+* Machine Learning readiness score
+* AI-generated dataset explanations
+* Dashboard comparison between multiple datasets
+* Export processed datasets
+* Dark mode interface
+
+---
+
+<div align="center">
+
+# Contributing
+
+Contributions, suggestions, and improvements are always welcome.
+
+If you'd like to improve this project:
+
+</div>
+
+```bash
+Fork the repository
+
+Create a feature branch
+
+Commit your changes
+
+Push the branch
+
+Open a Pull Request
+```
+
+---
+
+<div align="center">
+
+# License
+
+This project is released under the **MIT License**.
+
+You are welcome to use, modify, and learn from this project for educational and personal purposes.
+
+</div>
+
+---
+
+<div align="center">
+
+# Connect With Me
+
+<a href="https://github.com/CodexxNinja">
+<img src="https://img.shields.io/badge/GitHub-CodexxNinja-181717?style=for-the-badge&logo=github">
+</a>
+
+<a href="https://www.linkedin.com/">
+<img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin">
+</a>
+
+<a href="mailto:paradkarvarad@gmail.com">
+<img src="https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white">
+</a>
+
+</div>
+
+---
+
+<div align="center">
+
+<img src="https://user-images.githubusercontent.com/74038190/216656965-39a36c9d-8db8-4a7e-9b8b-d59c79e5b8d3.gif" width="450">
+
+### Thanks for visiting this repository.
+
+If you found this project helpful, consider giving it a ⭐ on GitHub.
+
+<img src="https://user-images.githubusercontent.com/74038190/216656977-ef584e23-480a-4d1f-8c3f-0f8d2b5b5f6b.gif" width="100%">
+
+</div>
