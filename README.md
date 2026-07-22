@@ -281,7 +281,7 @@ Smart Insights
 </td>
 
 <td align="center">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Jinja2_Logo.svg" width="65"><br>
+<img src="https://cdn.simpleicons.org/jinja/black" width="65"><br>
 <b>Jinja2</b>
 </td>
 
