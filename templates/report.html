@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block title %}Report - {{ filename }}{% endblock %}
+{% block content %}
+
+<div class="report-header">
+    <div>
+        <h1>📄 {{ filename }}</h1>
+        <p class="subtitle">{{ summary.rows }} rows × {{ summary.columns }} columns</p>
+    </div>
+    <a href="{{ url_for('upload') }}" class="btn-secondary">← Analyze Another File</a>
+</div>
+
+<!-- OVERVIEW CARDS -->
+<div class="stats-grid">
+    <div class="stat-card">
+        <span class="stat-label">Total Rows</span>
+        <span class="stat-value">{{ summary.rows }}</span>
+    </div>
+    <div class="stat-card">
+        <span class="stat-label">Total Columns</span>
+        <span class="stat-value">{{ summary.columns }}</span>
+    </div>
+    <div class="stat-card">
+        <span class="stat-label">Duplicate Rows</span>
+        <span class="stat-value">{{ summary.duplicate_rows }}</span>
+    </div>
+    <div class="stat-card">
+        <span class="stat-label">Columns with Missing Data</span>
+        <span class="stat-value">{{ summary.missing_values|length }}</span>
+    </div>
+</div>
+
+<!-- COLUMN INFO -->
+<div class="section">
+    <h2>Column Overview</h2>
+    <div class="table-wrapper">
+        <table class="data-table">
+            <thead>
+                <tr><th>Column</th><th>Data Type</th><th>Unique Values</th></tr>
+            </thead>
+            <tbody>
+                {% for col in summary.column_info %}
+                <tr>
+                    <td>{{ col.name }}</td>
+                    <td><span class="dtype-badge">{{ col.dtype }}</span></td>
+                    <td>{{ col.unique_values }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- MISSING VALUES -->
+{% if summary.missing_values %}
+<div class="section">
+    <h2>⚠️ Missing Values</h2>
+    <div class="table-wrapper">
+        <table class="data-table">
+            <thead>
+                <tr><th>Column</th><th>Missing Count</th><th>Missing %</th></tr>
+            </thead>
+            <tbody>
+                {% for item in summary.missing_values %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.count }}</td>
+                    <td>
+                        <div class="missing-bar-wrapper">
+                            <div class="missing-bar" style="width: {{ item.percent }}%"></div>
+                            <span>{{ item.percent }}%</span>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endif %}
+
+<!-- CHARTS -->
+{% if charts %}
+<div class="section">
+    <h2>Visualizations</h2>
+    <div class="charts-grid">
+        {% for chart in charts %}
+        <div class="chart-card">
+            <h3>{{ chart.title }}</h3>
+            <img src="{{ chart.image }}" alt="{{ chart.title }}">
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+<!-- DATA PREVIEW -->
+<div class="section">
+    <h2>Data Preview (first 10 rows)</h2>
+    <div class="table-wrapper">
+        {{ preview_data|safe }}
+    </div>
+</div>
+
+{% endblock %}

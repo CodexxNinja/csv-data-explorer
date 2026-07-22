@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Upload CSV{% endblock %}
+{% block content %}
+
+<div class="upload-box">
+    <h1>📊 CSV Data Explorer</h1>
+    <p class="subtitle">Upload any CSV file to instantly get summary statistics, missing value reports, and visualizations.</p>
+
+   <form method="POST" enctype="multipart/form-data" class="upload-form">
+    <label for="file" class="drop-zone" id="dropZone">
+        <input type="file" name="file" id="file" accept=".csv" required class="file-input-hidden">
+        <span id="dropZoneText">📁 Click to browse or drag & drop a .csv file here</span>
+    </label>
+    <button type="submit">Analyze File</button>
+</form>
+
+    <div class="info-note">
+        <strong>What you'll get:</strong>
+        <ul>
+            <li>Row/column counts and data types</li>
+            <li>Missing value report</li>
+            <li>Correlation heatmap</li>
+            <li>Distribution charts for numeric columns</li>
+            <li>Data preview table</li>
+        </ul>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}
