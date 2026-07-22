@@ -1,27 +1,51 @@
 {% extends "base.html" %}
-{% block title %}Upload CSV{% endblock %}
+{% block title %}CSV Explorer{% endblock %}
 {% block content %}
 
 <div class="upload-box">
-    <h1>📊 CSV Data Explorer</h1>
-    <p class="subtitle">Upload any CSV file to instantly get summary statistics, missing value reports, and visualizations.</p>
+    <div class="header-badge">Data Analytics</div>
+    <h1>CSV Data Explorer</h1>
+    <p class="subtitle">Upload any CSV file to instantly get summary statistics, missing value reports, and actionable visualizations.</p>
 
-   <form method="POST" enctype="multipart/form-data" class="upload-form">
-    <label for="file" class="drop-zone" id="dropZone">
-        <input type="file" name="file" id="file" accept=".csv" required class="file-input-hidden">
-        <span id="dropZoneText">📁 Click to browse or drag & drop a .csv file here</span>
-    </label>
-    <button type="submit">Analyze File</button>
-</form>
+    <form method="POST" enctype="multipart/form-data" class="upload-form">
+        <label for="file" class="drop-zone" id="dropZone">
+            <input type="file" name="file" id="file" accept=".csv" required class="file-input-hidden">
+            <div class="drop-zone-content">
+                <div class="upload-icon-wrapper">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="17 8 12 3 7 8"/>
+                        <line x1="12" y1="3" x2="12" y2="15"/>
+                    </svg>
+                </div>
+                <span id="dropZoneText">Click to browse or drag & drop a .csv file here</span>
+                <span class="file-limit-label">Maximum file size: 50MB</span>
+            </div>
+        </label>
+        <button type="submit" class="btn-primary">
+            <span>Analyze File</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+            </svg>
+        </button>
+    </form>
 
     <div class="info-note">
-        <strong>What you'll get:</strong>
-        <ul>
-            <li>Row/column counts and data types</li>
-            <li>Missing value report</li>
-            <li>Correlation heatmap</li>
-            <li>Distribution charts for numeric columns</li>
-            <li>Data preview table</li>
+        <div class="info-note-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="16" x2="12" y2="12"/>
+                <line x1="12" y1="8" x2="12.01" y2="8"/>
+            </svg>
+            What you'll get:
+        </div>
+        <ul class="info-list">
+            <li>Row/column counts and data type inference</li>
+            <li>Comprehensive missing value auditing</li>
+            <li>Correlation metrics & outlier detection</li>
+            <li>Distribution charts for numerical features</li>
+            <li>Interactive data preview table</li>
         </ul>
     </div>
 </div>

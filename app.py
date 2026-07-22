@@ -120,6 +120,79 @@ def analyze_dataframe(df):
     return summary
 
 
+def generate_insights(df, summary):
+    """Generate plain-English insights about the dataset automatically."""
+    insights = []
+    numeric_df = df.select_dtypes(include='number')
+
+    # Missing data insight
+    if summary['missing_values']:
+        worst = max(summary['missing_values'], key=lambda x: x['percent'])
+        insights.append(f"'{worst['name']}' has the most missing data — {worst['percent']}% of its values are empty.")
+    else:
+        insights.append("No missing values detected — this dataset is complete.")
+
+    # Duplicate rows insight
+    if summary['duplicate_rows'] > 0:
+        pct = round((summary['duplicate_rows'] / summary['rows']) * 100, 1)
+        insights.append(f"Found {summary['duplicate_rows']} duplicate rows ({pct}% of the dataset) — consider removing them before analysis.")
+
+    # Correlation insight
+    if numeric_df.shape[1] >= 2:
+        corr = numeric_df.corr().abs()
+        # Zero out the diagonal so a column isn't "correlated with itself"
+        for col in corr.columns:
+            corr.loc[col, col] = 0
+        max_corr = corr.max().max()
+        if max_corr > 0.01:
+            col1, col2 = corr.stack().idxmax()
+            strength = "very strongly" if max_corr > 0.8 else "strongly" if max_corr > 0.6 else "moderately"
+            insights.append(f"'{col1}' and '{col2}' are {strength} correlated (score: {round(max_corr, 2)}).")
+
+    # Skewness insight
+    skewed_cols = []
+    for col in numeric_df.columns:
+        skew = numeric_df[col].skew()
+        if abs(skew) > 2:
+            skewed_cols.append(col)
+    if skewed_cols:
+        cols_str = ", ".join(f"'{c}'" for c in skewed_cols[:3])
+        insights.append(f"{cols_str} {'is' if len(skewed_cols) == 1 else 'are'} heavily skewed — a few extreme values are pulling the average away from the typical value.")
+
+    # Column type balance
+    cat_cols = df.select_dtypes(include='object').columns.tolist()
+    if len(cat_cols) > 0 and len(numeric_df.columns) > 0:
+        insights.append(f"This dataset has {len(numeric_df.columns)} numeric column(s) and {len(cat_cols)} categorical/text column(s).")
+
+    return insights
+
+def detect_outliers(df):
+    """Detect outliers per numeric column using the IQR method."""
+    numeric_df = df.select_dtypes(include='number')
+    outlier_report = []
+
+    for col in numeric_df.columns:
+        data = numeric_df[col].dropna()
+        if len(data) < 4:
+            continue
+
+        Q1 = data.quantile(0.25)
+        Q3 = data.quantile(0.75)
+        IQR = Q3 - Q1
+        lower_bound = Q1 - 1.5 * IQR
+        upper_bound = Q3 + 1.5 * IQR
+
+        outliers = data[(data < lower_bound) | (data > upper_bound)]
+        if len(outliers) > 0:
+            outlier_report.append({
+                'column': col,
+                'count': len(outliers),
+                'percent': round((len(outliers) / len(data)) * 100, 1)
+            })
+
+    return sorted(outlier_report, key=lambda x: x['count'], reverse=True)
+
+
 @app.route('/', methods=['GET', 'POST'])
 def upload():
     if request.method == 'POST':
@@ -151,6 +224,8 @@ def upload():
                 return redirect(url_for('upload'))
 
             summary = analyze_dataframe(df)
+            insights = generate_insights(df, summary)
+            outliers = detect_outliers(df)
             charts = generate_charts(df, session_id)
 
             preview_data = df.head(10).to_html(classes='preview-table', index=False, border=0)
@@ -160,7 +235,9 @@ def upload():
                 summary=summary,
                 charts=charts,
                 filename=filename,
-                preview_data=preview_data
+                preview_data=preview_data,
+                insights=insights,
+                outliers=outliers
             )
 
         except Exception as e:

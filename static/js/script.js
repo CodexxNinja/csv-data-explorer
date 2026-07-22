@@ -26,7 +26,7 @@ if (dropZone) {
 
     function updateFileName() {
         if (fileInput.files.length) {
-            dropZoneText.textContent = `✅ ${fileInput.files[0].name} selected`;
+            dropZoneText.textContent = ` ${fileInput.files[0].name} selected`;
         }
     }
 }
