@@ -7,7 +7,7 @@
 ### Turn Any CSV Into an Interactive Data Report
 
 <p>
-A modern Flask web application that instantly transforms uploaded CSV files into detailed analytical reports featuring descriptive statistics, missing value analysis, smart insights, correlation heatmaps, distribution charts, outlier detection, and interactive visualizations — all without writing a single line of analysis code.
+A modern ***Flask web application*** that instantly transforms uploaded CSV files into detailed analytical reports featuring descriptive statistics, missing value analysis, smart insights, correlation heatmaps, distribution charts, outlier detection, and interactive visualizations — all without writing a single line of analysis code.
 </p>
 
 <img src="https://user-images.githubusercontent.com/74038190/216656965-39a36c9d-8db8-4a7e-9b8b-d59c79e5b8d3.gif" width="450">
