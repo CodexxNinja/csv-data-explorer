@@ -46,7 +46,7 @@ A modern Flask web application that instantly transforms uploaded CSV files into
 
 </div>
 
-**CSV Data Explorer** is designed to eliminate the repetitive work involved in exploring datasets. Instead of manually inspecting data, writing analysis scripts, and generating plots, users simply upload a CSV file and receive a comprehensive report within seconds.
+**CSV Data Explorer** is designed to eliminate the repetitive work involved in exploring datasets. Instead of manually inspecting data, writing analysis scripts, and generating plots, users simply **upload a CSV file and receive a comprehensive report within seconds.**
 
 The application automatically profiles the dataset, computes descriptive statistics, detects missing values and duplicate records, identifies outliers, generates meaningful visualizations, and produces plain-English insights based entirely on statistical analysis.
 
